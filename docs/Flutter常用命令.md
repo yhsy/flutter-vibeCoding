@@ -6,3 +6,6 @@
 - 按 r 热重载
 - 按 R 热重启
 
+### 3.web-server运行Flutter项目（兼容性最好）：`flutter run -d web-server`
+
+
