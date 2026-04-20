@@ -1,7 +1,7 @@
 // 引入 material 包，包含很多常用的 UI 组件。
 import 'package:flutter/material.dart';
 // 引入 foundation 包，包含很多常用的基础功能。
-import 'package:flutter/foundation.dart'; 
+import 'package:flutter/foundation.dart';
 
 // 程序入口，Flutter 启动后会先执行这里。
 void main() {
@@ -62,10 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // setState 的作用是告诉 Flutter：这里的数据变了，请重新 build 页面。
       _counter++;
     });
-   
-     // 点击日志（这里是先➕，再显示值）
+
+    // 点击日志（这里是先➕，再显示值）
     debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
-     
   }
 
   // Task_A：相加函数(注意：前面的类型要与返回值类型一致)
@@ -105,15 +104,23 @@ class _MyHomePageState extends State<MyHomePage> {
               // 使用主题里的标题样式，让数字更醒目。
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+
+            Text(
+              getNameInfo('王五', 20, 188),
+              style: TextStyle(
+                fontSize: 14,
+                color:Colors.red,
+              ),
+            ),
           ],
         ),
       ),
       // 右下角悬浮按钮。
       floatingActionButton: FloatingActionButton(
         // 点击按钮时执行加一逻辑。
-        onPressed:() {
+        onPressed: () {
           _incrementCounter();
-          String nameInfo = getNameInfo('张三',18,173);
+          String nameInfo = getNameInfo('张三', 18, 173);
           // nameInfo = getNameInfo('李四', 20);
           debugPrint('nameInfo:$nameInfo');
         },
