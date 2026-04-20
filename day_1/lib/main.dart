@@ -57,6 +57,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 点击日志（先显示原来的值，再➕）
     // debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
+    if(isOdd(_counter)){
+      debugPrint('【日志】当前计数是偶数：$_counter');
+    }else{
+      debugPrint('【日志】当前计数是奇数：$_counter');
+    }
 
     setState(() {
       // setState 的作用是告诉 Flutter：这里的数据变了，请重新 build 页面。
@@ -75,6 +80,16 @@ class _MyHomePageState extends State<MyHomePage> {
   // Task_B：名字和年龄拼成一句话
   String getNameInfo(String name, int age, int height) {
     return '我的名字是$name，我的年龄是$age，我的身高是$height';
+  }
+
+  // Task_C：判断一个数字是不是偶数
+  bool isOdd(int num){
+    return num % 2 == 0;
+  }
+
+  // Task_D：计算三数之和
+  int countNum(int a, int b ,int c){
+    return a + b + c;
   }
 
   // 页面 UI 的具体结构写在这里。
