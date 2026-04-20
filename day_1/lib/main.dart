@@ -62,9 +62,20 @@ class _MyHomePageState extends State<MyHomePage> {
       // setState 的作用是告诉 Flutter：这里的数据变了，请重新 build 页面。
       _counter++;
     });
-
+   
      // 点击日志（这里是先➕，再显示值）
     debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
+     
+  }
+
+  // Task_A：相加函数(注意：前面的类型要与返回值类型一致)
+  int addNum(int a, int b) {
+    return a + b;
+  }
+
+  // Task_B：名字和年龄拼成一句话
+  String getNameInfo(String name, int age, int height) {
+    return '我的名字是$name，我的年龄是$age，我的身高是$height';
   }
 
   // 页面 UI 的具体结构写在这里。
@@ -100,7 +111,12 @@ class _MyHomePageState extends State<MyHomePage> {
       // 右下角悬浮按钮。
       floatingActionButton: FloatingActionButton(
         // 点击按钮时执行加一逻辑。
-        onPressed: _incrementCounter,
+        onPressed:() {
+          _incrementCounter();
+          String nameInfo = getNameInfo('张三',18,173);
+          // nameInfo = getNameInfo('李四', 20);
+          debugPrint('nameInfo:$nameInfo');
+        },
         // 按钮提示文字，辅助无障碍和长按提示。
         tooltip: 'Increment',
         // 按钮图标。
