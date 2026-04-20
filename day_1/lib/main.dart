@@ -1,5 +1,7 @@
 // 引入 material 包，包含很多常用的 UI 组件。
 import 'package:flutter/material.dart';
+// 引入 foundation 包，包含很多常用的基础功能。
+import 'package:flutter/foundation.dart'; 
 
 // 程序入口，Flutter 启动后会先执行这里。
 void main() {
@@ -50,10 +52,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   // 点击按钮时调用这个方法，让计数器 +1。
   void _incrementCounter() {
+    // 最简单点击事件
+    // print('点击了按钮');
+
+    // 点击日志（先显示原来的值，再➕）
+    // debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
+
     setState(() {
       // setState 的作用是告诉 Flutter：这里的数据变了，请重新 build 页面。
       _counter++;
     });
+
+     // 点击日志（这里是先➕，再显示值）
+    debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
   }
 
   // 页面 UI 的具体结构写在这里。
