@@ -57,9 +57,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 点击日志（先显示原来的值，再➕）
     // debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
-    if(isOdd(_counter)){
+    if (isOdd(_counter)) {
       debugPrint('【日志】当前计数是偶数：$_counter');
-    }else{
+    } else {
       debugPrint('【日志】当前计数是奇数：$_counter');
     }
 
@@ -70,6 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
     // 点击日志（这里是先➕，再显示值）
     debugPrint('【日志】悬浮按钮被点击，当前计数：$_counter');
+
+    final userInfo = User('张三', 18, '男', '一个喜欢编程的年轻人');
+    debugPrint('姓名: ${userInfo.name}, 年龄: ${userInfo.age}, 性别: ${userInfo.gender}, 简介: ${userInfo.bio}');
   }
 
   // Task_A：相加函数(注意：前面的类型要与返回值类型一致)
@@ -83,12 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   // Task_C：判断一个数字是不是偶数
-  bool isOdd(int num){
+  bool isOdd(int num) {
     return num % 2 == 0;
   }
 
   // Task_D：计算三数之和
-  int countNum(int a, int b ,int c){
+  int countNum(int a, int b, int c) {
     return a + b + c;
   }
 
@@ -122,10 +125,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Text(
               getNameInfo('王五', 20, 188),
-              style: TextStyle(
-                fontSize: 14,
-                color:Colors.red,
-              ),
+              style: TextStyle(fontSize: 14, color: Colors.red),
+            ),
+            Text(
+              '姓名: ${User('李四',0,'男','一个喜欢编程的年轻人').name}, 年龄: ${User('', 20,'男','').age}，性别：${User('', 0,'男','').gender}，简介：${User('', 0,'男','一个喜欢编程的年轻人').bio}',
+              style: TextStyle(fontSize: 14, color: Colors.orange),
             ),
           ],
         ),
@@ -146,4 +150,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+class User {
+  final String name;
+  final int age;
+  // final String avatar;
+  final String gender;
+
+  final String bio;
+  
+
+  User(this.name, this.age, this.gender, this.bio);
 }
